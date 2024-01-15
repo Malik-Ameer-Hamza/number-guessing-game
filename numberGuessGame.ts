@@ -1,4 +1,4 @@
-#! usr/bin/env node
+#!usr/bin/env node
 
 import inquirer from "inquirer";
 import chalk from "chalk";
@@ -7,7 +7,6 @@ import showBanner from "node-banner";
 
 let sleep = () => new Promise((r) => setTimeout(r, 2000));
 
-
 async function displayBanner(): Promise<void> {
     await showBanner(
         "Number Guessing Game",
@@ -15,7 +14,6 @@ async function displayBanner(): Promise<void> {
     );
     await sleep();
 };
-
 
 async function getGameSettings(): Promise<{ difficulty: string; userRound: number }> {
     let { difficulty } = await inquirer.prompt([{
@@ -39,8 +37,6 @@ async function getGameSettings(): Promise<{ difficulty: string; userRound: numbe
 
     return { difficulty, userRound }
 };
-
-
 
 async function playRound(number_range: number, guessCount: number, correctAnswer: number): Promise<{ guessCount: number; correctAnswer: number }> {
     let { userNumber } = await inquirer.prompt([{
@@ -73,8 +69,6 @@ async function playRound(number_range: number, guessCount: number, correctAnswer
     return { guessCount: guessCount + 1, correctAnswer };
 };
 
-
-
 async function playAgain(): Promise<boolean> {
     let { playAgain } = await inquirer.prompt([{
         name: "playAgain",
@@ -84,8 +78,6 @@ async function playAgain(): Promise<boolean> {
 
     return playAgain;
 };
-
-
 
 async function startGame(): Promise<void> {
     await displayBanner();
@@ -114,7 +106,6 @@ async function startGame(): Promise<void> {
     }
 
 };
-
 
 startGame();
 
