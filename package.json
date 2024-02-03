@@ -1,8 +1,8 @@
 {
-  "name": "number_guess_game_proj",
-  "version": "1.0.2",
+  "name": "ameer-number-guess-game",
+  "version": "1.0.3",
   "description": "",
-  "main": "index.js",
+  "main": "numberGuessGame.js",
   "type": "module",
   "bin": "./numberGuessGame.js",
   "scripts": {
